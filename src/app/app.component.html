@@ -1,17 +1,28 @@
-<!-- Welcome to {{title}}
-Hello {{user}}
 
-{{car1.description}}
+<div class="container">
+  <app-navi></app-navi>
+  <div class="row">
+    <div class="col-md-3">
+      <app-brand></app-brand>
+    </div>
+    <div class="col-md-9">
+      <app-car></app-car>
+    </div>
+    
+  </div>
 
-<ul>
-  <li *ngFor="let car of cars">{{car.description}}</li>
-</ul> -->
+  <div class="row">
+    <div class="col-md-3">
+      <app-color></app-color>
+    </div>
+    <div class="col-md-3">
+      <app-customer></app-customer>
+    </div>
+    <div class="col-md-6">
+      <app-rental></app-rental>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+</div>
 
-<app-navi></app-navi>
-<app-rental></app-rental>
-<app-customer></app-customer>
-<app-color></app-color>
-<app-brand></app-brand>
-<app-car></app-car>
-
-<router-outlet></router-outlet>
