@@ -4,7 +4,9 @@
         <th>Renk Çeşitleri</th>
     </tr>
 </thead>
-    <li (click)="setCurrentColor(color)" *ngFor="let color of colors" 
+    <li (click)="setCurrentColor(color)" 
+    routerLink = "/cars/color/{{color.colorId}}"
+    *ngFor="let color of colors" 
     [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
   </ul>
 
