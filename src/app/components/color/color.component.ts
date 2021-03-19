@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Color } from 'src/app/models/color';
+import { ColorService } from 'src/app/services/color.service';
 
 @Component({
   selector: 'app-color',
@@ -7,17 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorComponent implements OnInit {
 
-  color1 = { colorId: 1, colorName: 'Mavi' }
-  color2 = { colorId: 2, colorName: 'Sarı' }
-  color3 = { colorId: 3, colorName: 'Yeşil' }
-  color4 = { colorId: 4, colorName: 'Kırmızı' }
-  color5 = { colorId: 5, colorName: 'Beyaz' }
-
-  colors = [this.color1, this.color2, this.color3, this.color4, this.color5]
-
-  constructor() { }
+  colors: Color[] = []
+  currentColor:Color
+  constructor(private colorService:ColorService) { }
 
   ngOnInit(): void {
+    this.getColors()
   }
 
+
+  getColors() {
+    this.colorService.getColors().subscribe(response => {
+      this.colors = response.data
+    })
+  }
+
+  setCurrentColor(color:Color){
+    this.currentColor=color;
+  }
+
+  getCurrentColorClass(color:Color){
+    if(color == this.currentColor){
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+    }
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Brand } from 'src/app/models/brand';
+import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
   selector: 'app-brand',
@@ -7,17 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrandComponent implements OnInit {
 
-  brand1={brandId:1, brandName:"Togg"}
-  brand2={brandId:2, brandName:"Mercedes"}
-  brand3={brandId:3, brandName:"Bmw"}
-  brand4={brandId:4, brandName:"Toyota"}
-  brand5={brandId:5, brandName:"Fiat"}
-
-  brands=[this.brand1,this.brand2,this.brand3,this.brand4,this.brand5]
-  
-  constructor() { }
+  brands: Brand[] = []
+  currentBrand:Brand
+  constructor(private brandService:BrandService) { }
 
   ngOnInit(): void {
+    this.getBrands()
   }
 
+
+  getBrands() {
+    this.brandService.getBrands().subscribe(response => {
+      this.brands = response.data
+    })
+  }
+
+  setCurrentBrand(brand:Brand){
+    this.currentBrand=brand;
+  }
+
+  getCurrentBrandClass(brand:Brand){
+    if(brand == this.currentBrand){
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+    }
+  }
 }

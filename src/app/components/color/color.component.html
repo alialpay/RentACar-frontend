@@ -1,7 +1,11 @@
 <ul class="list-group list-group-flush">
-    <li class="list-group-item">Mavi</li>
-    <li class="list-group-item">Sarı</li>
-    <li class="list-group-item">Yeşil</li>
-    <li class="list-group-item">Kırmızı</li>
-    <li class="list-group-item">Beyaz</li>
+  <thead>
+    <tr>
+        <th>Renk Çeşitleri</th>
+    </tr>
+</thead>
+    <li (click)="setCurrentColor(color)" *ngFor="let color of colors" 
+    [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
   </ul>
+
+  <h5 *ngIf="currentColor" > {{currentColor.colorName}} seçtiniz</h5>
