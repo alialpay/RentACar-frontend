@@ -48,4 +48,5 @@ export class CarComponent implements OnInit {
       this.dataLoaded = true
     })
   }
+  
 }
