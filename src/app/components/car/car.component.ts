@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
+import { CarImage } from 'src/app/models/carImage';
+import { CarDetailService } from 'src/app/services/car-detail.service';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -11,9 +13,11 @@ import { CarService } from 'src/app/services/car.service';
 export class CarComponent implements OnInit {
 
   cars: Car[] = []
+  carImages: CarImage[]=[];
+  apiUrl : string = "https://localhost:44326";
   dataLoaded = false
 
-  constructor(private carService: CarService, private activatedRoute:ActivatedRoute) { }    // ActivatedRoute built-in bir angular servisi
+  constructor(private carService: CarService, private carDetailService:CarDetailService, private activatedRoute:ActivatedRoute) { }    // ActivatedRoute built-in bir angular servisi
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{

@@ -2,21 +2,21 @@
     <span class="visually-hidden">Loading...</span>
 </div>
 
-<table *ngIf="dataLoaded!=false" class="table"> 
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Marka</th>
-            <th>Renk</th>
-            <th>Model Yılı</th>
-            <th>Açıklama</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let car of cars">
-        <td>{{car.carId}}</td>
-        <td>{{car.brandName}}</td>
-        <td>{{car.colorName}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.description}}</td>
-    </tr>
-</table>
+
+    <div class="card" style="width: 25%; height:500px;"  *ngFor="let car of cars">
+        <img src="{{apiUrl}}{{car.imagePath}}" class="card-img-top" alt="..." height="150px">
+        <div class="card-body">
+            <h5 class="card-title">{{car.brandName}}</h5>
+            <p class="card-text">Some quick example </p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Marka - {{car.brandName}}</li>
+            <li class="list-group-item">Renk - {{car.colorName}}</li>
+            <li class="list-group-item">Fiyat - {{car.dailyPrice}}</li>
+        </ul>
+        <div class="card-body">
+            <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-success">Sepete
+                Ekle</button>
+            <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-warning">Detaylar</button>
+        </div>
+    </div>
