@@ -5,6 +5,7 @@ import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
 
 import { CarService } from 'src/app/services/car.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-car-detail',
@@ -15,7 +16,7 @@ export class CarDetailComponent implements OnInit {
 
   carImages:CarImage[]=[];
   cars:Car[]=[];
-  apiUrl : string = "https://localhost:44326";
+  imageBasePath  = environment.imageUrl;
   dataLoaded=false;
 
   constructor(private carService:CarService, 
@@ -49,7 +50,7 @@ export class CarDetailComponent implements OnInit {
   }
 
   getImagePath(image:string){
-   return this.apiUrl + image;
+   return environment.apiUrl + image;
   }
 
 }
