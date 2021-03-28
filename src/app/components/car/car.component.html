@@ -1,22 +1,22 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
 
-
-    <div class="card" style="width: 25%; height:500px;"  *ngFor="let car of cars">
-        <img src="{{apiUrl}}{{car.imagePath}}" class="card-img-top" alt="..." height="150px">
-        <div class="card-body">
-            <h5 class="card-title">{{car.brandName}}</h5>
-            <p class="card-text">Some quick example </p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Marka - {{car.brandName}}</li>
-            <li class="list-group-item">Renk - {{car.colorName}}</li>
-            <li class="list-group-item">Fiyat - {{car.dailyPrice}}</li>
-        </ul>
-        <div class="card-body">
-            <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-success">Sepete
-                Ekle</button>
-            <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-warning">Detaylar</button>
+<div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let car of cars ">
+        <div class="card" style="width: 100%;">
+            <img src="{{imageBasePath}}{{car.imagePath}}" class="card-img-top" alt="Araba Resmi">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{car.description}}</h5>
+                <hr>
+                <p> <b>Marka :</b> {{car.brandName }} </p>
+                <hr>
+                <p> <b>Model Yılı :</b> {{car.modelYear}} </p>
+                <hr>
+                <p> <b class="pull-left">Günlük Fiyatı :</b> {{car.dailyPrice}} ₺</p>
+                <hr>
+                <p> <b>Renk :</b> {{car.colorName}} </p>
+                <hr>
+                
+                <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-success">Detaylar</button>
+            </div>
         </div>
     </div>
+</div>

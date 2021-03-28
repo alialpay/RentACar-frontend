@@ -4,6 +4,7 @@ import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
 import { CarDetailService } from 'src/app/services/car-detail.service';
 import { CarService } from 'src/app/services/car.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-car',
@@ -13,8 +14,9 @@ import { CarService } from 'src/app/services/car.service';
 export class CarComponent implements OnInit {
 
   cars: Car[] = []
+  imageBasePath  = environment.imageUrl
   carImages: CarImage[]=[];
-  apiUrl : string = "https://localhost:44326";
+  apiUrl : string = "https://localhost:44326/api/cars/getcardetails";
   dataLoaded = false
 
   constructor(private carService: CarService, private carDetailService:CarDetailService, private activatedRoute:ActivatedRoute) { }    // ActivatedRoute built-in bir angular servisi
