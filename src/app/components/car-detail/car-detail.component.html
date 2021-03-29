@@ -4,7 +4,8 @@
 
 
     <div class="card" style=" height:600px;"  *ngFor="let car of cars">
-        <img src="{{imageBasePath}}{{car.imagePath}}" class="card-img-top" alt="...">
+        <img *ngIf="car.imagePath==null" src="{{imageBasePath}}logo.jpg" alt="">
+        <img *ngIf="car.imagePath!=null" src="{{imageBasePath}}{{car.imagePath}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{car.brandName}}</h5><br>
             <p class="card-text"><strong>Ürün Açıklaması - </strong>{{car.description}}</p>

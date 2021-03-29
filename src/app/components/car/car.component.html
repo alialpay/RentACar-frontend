@@ -2,7 +2,8 @@
 <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let car of cars ">
         <div class="card" style="width: 100%;">
-            <img src="{{imageBasePath}}{{car.imagePath}}" class="card-img-top" alt="Araba Resmi">
+        <img *ngIf="car.imagePath==null" src="{{imageBasePath}}logo.jpg" alt="">
+        <img *ngIf="car.imagePath!=null" src="{{imageBasePath}}{{car.imagePath}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title text-center">{{car.description}}</h5>
                 <hr>
@@ -15,7 +16,7 @@
                 <p> <b>Renk :</b> {{car.colorName}} </p>
                 <hr>
                 
-                <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-success">Detaylar</button>
+                <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-success">Kirala</button>
             </div>
         </div>
     </div>
