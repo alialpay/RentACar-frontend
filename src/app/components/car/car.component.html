@@ -1,5 +1,13 @@
 
 <div class="row">
+    <div class="mb-3">
+        <label for="filterText" class="form-label">Arama</label>
+        <input text="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+      </div>
+      <div *ngIf="filterText.length>2" class='alert alert-primary'>
+        {{filterText}} aradınız.
+      </div>
+      
     <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let car of cars ">
         <div class="card" style="width: 100%;">
         <img *ngIf="car.imagePath==null" src="{{imageBasePath}}logo.jpg" alt="">
@@ -7,7 +15,7 @@
             <div class="card-body">
                 <h5 class="card-title text-center">{{car.description}}</h5>
                 <hr>
-                <p> <b>Marka :</b> {{car.brandName }} </p>
+                <p> <b>Marka :</b> {{car.brandName | uppercase}} </p>
                 <hr>
                 <p> <b>Model Yılı :</b> {{car.modelYear}} </p>
                 <hr>
@@ -16,7 +24,7 @@
                 <p> <b>Renk :</b> {{car.colorName}} </p>
                 <hr>
                 
-                <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-success">Kirala</button>
+                <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-success">Detaylar</button>
             </div>
         </div>
     </div>

@@ -11,13 +11,12 @@
             <p class="card-text"><strong>Ürün Açıklaması - </strong>{{car.description}}</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Marka - </strong>{{car.brandName}}</li>
             <li class="list-group-item"><strong>Renk - </strong>{{car.colorName}}</li>
-            <li class="list-group-item"><strong>Fiyat - </strong> {{car.dailyPrice}}</li>
+            <li class="list-group-item"><strong>Fiyat - </strong> {{car.dailyPrice | currency}}</li>
+            <li class="list-group-item"><strong>Kdv Dahil - </strong> {{car.dailyPrice | vatAdded:14 | currency}}</li>
             <li class="list-group-item"><strong>Model Yıl - </strong>{{car.modelYear}}</li>
         </ul>
         <div class="card-body">
-            <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-success">Sepete Ekle</button>
-            <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-warning">Detaylar</button>
+            <button routerLink="/cars/cardetail/{{ car.carId }}" type="button" class="btn btn-success">Kirala</button>
         </div>
     </div>
