@@ -13,6 +13,8 @@ import { RentalComponent } from './components/rental/rental.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
+import { BrandPipePipe } from './pipes/brand-pipe.pipe';
+import { ColorPipePipe } from './pipes/color-pipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,8 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
     NaviComponent,
     CarDetailComponent,
     VatAddedPipe,
+    BrandPipePipe,
+    ColorPipePipe,
   ],
   imports: [
     BrowserModule,

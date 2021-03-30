@@ -18,7 +18,7 @@ export class CarComponent implements OnInit {
   carImages: CarImage[]=[];
   apiUrl : string = "https://localhost:44326/api/cars/getcardetails";
   dataLoaded = false
-  filterText="";
+  
 
   constructor(private carService: CarService, private carDetailService:CarDetailService, private activatedRoute:ActivatedRoute) { }    // ActivatedRoute built-in bir angular servisi
 

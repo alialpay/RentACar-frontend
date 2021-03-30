@@ -1,12 +1,16 @@
 <ul class="list-group list-group-flush">
-  <thead>
-    <tr>
-        <th>Renk Çeşitleri</th>
-    </tr>
-</thead>
+
+  <div class="p-3 border "></div>
+  <div class="p-3 border alert-primary"></div>
+  <div class="p-3 border "></div>
+  
+  <div class="mb-3">
+    <input text="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="renk ara">
+  </div>
+
     <li (click)="setCurrentColor(color)" 
     routerLink = "/cars/color/{{color.colorId}}"
-    *ngFor="let color of colors" 
+    *ngFor="let color of colors | colorPipe:filterText" 
     [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
   </ul>
 
