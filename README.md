@@ -1,15 +1,18 @@
 # RentalCar
 
-Anasayfada veritabanında kayıtlı bulunuan arabalar listelenir.
-Arabalar markalarına ve renklerine göre filtrelenebilir.
+## Homepage
+The cars found in the database are listed.
+The cars can be filtered by brand and color.
 
 ![GitHub](https://github.com/alialpay/RentACar-frontend/blob/master/src/images/genelGorunum.png)
 
-Arabaların detay sayfaları mevcuttur.
+## Detail Page
+Detail page is available for each car
 
 ![GitHub](https://github.com/alialpay/RentACar-frontend/blob/master/src/images/detay1.png)
 
-Kiralanacak arabanın iş kurallarından geçmesiyle toastr service ile gerekli bilgilendirme/uyarı mesajı verilir
+## Business Rules
+The suitability of the vehicle to be rented is checked and an information message is given to the user.
 
 ![GitHub](https://github.com/alialpay/RentACar-frontend/blob/master/src/images/detay2.png)
 
