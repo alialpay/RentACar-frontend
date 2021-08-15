@@ -1,5 +1,15 @@
 # RentalCar
 
+![GitHub](https://github.com/alialpay/RentACar-frontend/blob/master/src/images/genelGorunum.png)
+
+
+![GitHub](https://github.com/alialpay/RentACar-frontend/blob/master/src/images/detay1.png)
+
+
+![GitHub](https://github.com/alialpay/RentACar-frontend/blob/master/src/images/detay2.png)
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
 ## Development server
